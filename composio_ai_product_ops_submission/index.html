@@ -1,0 +1,569 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composio AI Product Ops — 100-App Integration Intelligence</title>
+<style>
+body{margin:0;background:#09111f;color:#e8eefb;font:14px/1.5 Inter,system-ui,sans-serif}.wrap{max-width:1450px;margin:auto;padding:34px 26px 80px}
+.hero,.panel,.stat{background:#111b2d;border:1px solid #263652;border-radius:18px}.hero{padding:38px;margin-bottom:18px}
+h1{font-size:42px;line-height:1.05;margin:8px 0 14px;letter-spacing:-1.5px}h2{font-size:25px;margin:0 0 14px}h3{margin-bottom:6px}
+.eyebrow{color:#7dd3fc;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.lead{font-size:20px;max-width:1000px}
+.muted,small{display:block;color:#9aa9c4;font-size:12px}.note{color:#fde68a;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}.stat{padding:18px}.stat b{font-size:30px;display:block}
+.panel{padding:23px;margin:18px 0}.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.insight{padding:13px 0;border-left:3px solid #7dd3fc;padding-left:14px;margin:10px 0}
+.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.box{padding:17px;border:1px solid #263652;border-radius:13px;min-height:100px}.green{background:#0c2921}.yellow{background:#2c280d}.red{background:#2c171b}
+.flow{display:flex;gap:10px;flex-wrap:wrap}.step{flex:1;min-width:170px;border:1px solid #263652;border-radius:12px;padding:16px;background:#0d1627}
+.controls{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}select,input{background:#0b1424;color:#e8eefb;border:1px solid #263652;border-radius:9px;padding:10px}
+.tablewrap{overflow:auto;max-height:760px;border:1px solid #263652;border-radius:12px}table{border-collapse:collapse;width:100%;min-width:1250px}th,td{padding:10px;border-bottom:1px solid #263652;text-align:left;vertical-align:top}th{position:sticky;top:0;background:#16223a}a{color:#7dd3fc;text-decoration:none}.pill{display:inline-block;border-radius:999px;padding:3px 8px;font-size:11px;text-transform:capitalize}.ready{background:#0d3a2b;color:#86efac}.constraint{background:#3b330d;color:#fde68a}.gated,.no{background:#411a21;color:#fca5a5}
+footer{color:#8b9ab5;font-size:12px;margin-top:22px}code{background:#0a1322;padding:2px 5px;border-radius:4px}
+@media(max-width:900px){.grid,.cols,.matrix{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid,.cols,.matrix{grid-template-columns:1fr}h1{font-size:34px}}
+</style></head><body><div class="wrap">
+<section class="hero"><div class="eyebrow">AI Product Ops Intern • Composio Take-Home</div>
+<h1>100-App Integration Intelligence</h1>
+<p class="lead"><b>Headline:</b> the API existing is not the same as an integration being buildable. The strongest opportunities combine <b>self-serve credentials + broad API surface + predictable permissions</b>; the hardest cases are gated by enterprise access, approvals, licensing or immature developer surfaces.</p>
+<p class="note">Snapshot date: 17 Aug 2026. The final human verification loop is deliberately marked pending rather than claiming fabricated accuracy.</p></section>
+
+<div class="grid">
+<div class="stat"><b>100</b><span>apps / 10 categories</span></div>
+<div class="stat"><b>84</b><span>with OAuth in auth model</span></div>
+<div class="stat"><b>69</b><span>with broad API surfaces</span></div>
+<div class="stat"><b>85</b><span>buildable now, with/without constraints</span></div></div>
+
+<section class="panel"><h2>Executive findings</h2><div class="cols">
+<div><div class="insight"><b>01 — Access is the bottleneck.</b> A documented API can still be commercially or administratively gated.</div>
+<div class="insight"><b>02 — OAuth is the dominant public-integration pattern.</b> Private/internal use often uses API keys or tokens.</div>
+<div class="insight"><b>03 — REST remains the broadest common surface.</b> GraphQL is a strong secondary pattern in modern SaaS.</div></div>
+<div><div class="insight"><b>04 — MCP is an acceleration signal.</b> Existing MCP implementations reduce tool-design effort, but official and community MCP must be separated.</div>
+<div class="insight"><b>05 — Developer-first products are the easy wins.</b> Mature APIs plus self-serve credentials shorten toolkit time-to-value.</div>
+<div class="insight"><b>06 — Gated apps belong in outreach, not automatic rejection.</b> Broad API + access gate is a partnership problem.</div></div></div></section>
+
+<section class="panel"><h2>Opportunity matrix</h2><div class="matrix">
+<div class="box green"><b>🟢 Easy wins</b><br>Self-serve + broad API. Build first and reuse auth patterns.</div>
+<div class="box green"><b>🟢 Constrained wins</b><br>Broad API with admin, plan or review friction.</div>
+<div class="box yellow"><b>🟡 Outreach</b><br>Broad API but enterprise/contact/approval gate.</div>
+<div class="box red"><b>🔴 Validate / deprioritize</b><br>Narrow, unstable or non-general-purpose API.</div></div></section>
+
+<section class="panel"><h2>Research agent</h2><div class="flow">
+<div class="step"><b>1. Discover</b><br>Official developer, auth, API, access and MCP sources.</div>
+<div class="step"><b>2. Extract</b><br>Strict structured fields; no unrestricted prose.</div>
+<div class="step"><b>3. Challenge</b><br>API existence ≠ credential access; community MCP ≠ official MCP.</div>
+<div class="step"><b>4. Verify</b><br>Stratified sample + claim-level source checking.</div>
+<div class="step"><b>5. Prioritize</b><br>Build, constrain, outreach or deprioritize.</div></div>
+<p class="note">The repo contains the runnable research-agent scaffold and verification sampler. A live search/browser provider should be connected before claiming a completed live run.</p></section>
+
+<section class="panel"><h2>Verification</h2><div class="cols">
+<div><h3>Sampling design</h3><p>Sample across all 10 categories and deliberately include gated products, unusual auth, low-confidence records and MCP claims.</p><h3>Scoring</h3><p>Mark each claim <b>SUPPORTED / CONTRADICTED / UNRESOLVED</b>. Accuracy = supported ÷ (supported + contradicted).</p></div>
+<div><h3>Current status</h3><p><span class="pill constraint">FINAL HUMAN CHECK PENDING</span></p><p>This is intentional: the assignment explicitly rewards honesty about misses. Do not replace this with an invented percentage.</p></div></div></section>
+
+<section class="panel"><h2>100-app research table</h2>
+<div class="controls"><select id="cat"><option value="">All categories</option><option>AI &amp; Media</option><option>CRM &amp; Sales</option><option>Communications</option><option>Data &amp; SEO</option><option>Developer &amp; Infra</option><option>Ecommerce</option><option>Finance &amp; Fintech</option><option>Marketing &amp; Ads</option><option>Productivity</option><option>Support &amp; Helpdesk</option></select>
+<select id="verdict"><option value="">All verdicts</option><option value="ready">Ready</option><option value="constraint">With constraints</option><option value="gated">Gated</option><option value="no">Not viable</option></select>
+<input id="q" placeholder="Search app, auth, blocker…"></div>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>App</th><th>What it does</th><th>Auth</th><th>Access</th><th>API</th><th>MCP</th><th>Buildability / blocker</th><th>Evidence</th></tr></thead><tbody id="rows"><tr data-cat="CRM &amp; Sales" data-verdict="constraint">
+<td>1</td><td><b>Salesforce</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>self-serve trial/free dev org</td>
+<td>REST + GraphQL + Bulk<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production app/org setup and permissions.</small></td>
+<td><a href="https://developer.salesforce.com/docs/platform/connect-rest-api/guide/quickstart.html" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="ready">
+<td>2</td><td><b>HubSpot</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2 + private access token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Public/private app model must match deployment.</small></td>
+<td><a href="https://developers.hubspot.com/docs/api-reference/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="constraint">
+<td>3</td><td><b>Pipedrive</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>self-serve / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App registration, scopes or account permissions.</small></td>
+<td><a href="https://developers.pipedrive.com/docs/api/v1/" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="ready">
+<td>4</td><td><b>Attio</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2 + API key</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>OAuth app registration for multi-workspace integrations.</small></td>
+<td><a href="https://docs.attio.com/rest-api/guides/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="constraint">
+<td>5</td><td><b>Twenty</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>self-serve / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App registration, scopes or account permissions.</small></td>
+<td><a href="https://docs.twenty.com/developers/overview" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="constraint">
+<td>6</td><td><b>Podio</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>self-serve developer registration</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Application registration is required.</small></td>
+<td><a href="https://developers.podio.com/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="constraint">
+<td>7</td><td><b>Zoho CRM</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>self-serve / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App registration, scopes or account permissions.</small></td>
+<td><a href="https://www.zoho.com/crm/developer/docs/api/v8/" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="ready">
+<td>8</td><td><b>Close</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>API key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>API keys are org/user scoped; OAuth is preferred for third-party apps.</small></td>
+<td><a href="https://developer.close.com/api/overview/api-key-authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="gated">
+<td>9</td><td><b>Copper</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2</td><td>contact/register app</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>OAuth app registration requires contacting Copper.</small></td>
+<td><a href="https://developer.copper.com/introduction/oauth/index.html" target="_blank">docs ↗</a></td></tr><tr data-cat="CRM &amp; Sales" data-verdict="gated">
+<td>10</td><td><b>DealCloud</b><small>CRM &amp; Sales</small></td>
+<td>CRM/sales platform for customer records, pipelines and revenue workflows.</td><td>OAuth2 / token</td><td>enterprise/contact</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Enterprise-controlled access and credentials.</small></td>
+<td><a href="https://api.docs.dealcloud.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>11</td><td><b>Zendesk</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>OAuth2 + API token</td><td>self-serve account; admin for client setup</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>OAuth client creation requires admin access.</small></td>
+<td><a href="https://developer.zendesk.com/documentation/api-basics/authentication/api-tokens-to-oauth/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>12</td><td><b>Intercom</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>OAuth2 + access token</td><td>self-serve private app; public app review</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Public integrations require OAuth and app/scope approval.</small></td>
+<td><a href="https://developers.intercom.com/docs/build-an-integration/learn-more/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>13</td><td><b>Freshdesk</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://developers.freshdesk.com/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>14</td><td><b>Front</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://dev.frontapp.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>15</td><td><b>Pylon</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://docs.usepylon.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>16</td><td><b>LiveAgent</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://www.liveagent.com/features/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>17</td><td><b>Plain</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://www.plain.com/docs" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>18</td><td><b>Help Scout</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://developer.helpscout.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>19</td><td><b>Gorgias</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://developers.gorgias.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Support &amp; Helpdesk" data-verdict="constraint">
+<td>20</td><td><b>Gladly</b><small>Support &amp; Helpdesk</small></td>
+<td>Customer support platform for tickets, conversations and service operations.</td><td>API key + OAuth2</td><td>self-serve trial / account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Plan, role or app-registration constraints.</small></td>
+<td><a href="https://developer.gladly.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>21</td><td><b>Slack</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + bot/user tokens</td><td>self-serve app creation</td>
+<td>REST + Events + Web API<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Workspace/admin permissions vary by scope.</small></td>
+<td><a href="https://api.slack.com/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>22</td><td><b>Twilio</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://www.twilio.com/docs/iam/keys/api-key" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>23</td><td><b>Zoho Cliq</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://www.zoho.com/cliq/help/restapi/" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>24</td><td><b>Lark</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://open.larksuite.com/document/" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>25</td><td><b>Pumble</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://pumble.com/help/" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>26</td><td><b>Discord</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>Bot token + OAuth2</td><td>self-serve developer portal</td>
+<td>REST + Gateway<small>broad</small></td><td>community</td>
+<td><span class="pill ready">ready</span><small>Bot permissions/intents and rate limits.</small></td>
+<td><a href="https://discord.com/developers/docs/quick-start/getting-started" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>27</td><td><b>Telegram</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>Bot token</td><td>self-serve</td>
+<td>Bot API<small>broad</small></td><td>community</td>
+<td><span class="pill ready">ready</span><small>Bot identity limits actions to bot-accessible surfaces.</small></td>
+<td><a href="https://core.telegram.org/bots/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="constraint">
+<td>28</td><td><b>WhatsApp Business</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2/system user tokens</td><td>self-serve with Meta Business setup</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Business verification, phone number and messaging policies.</small></td>
+<td><a href="https://developers.facebook.com/docs/whatsapp/cloud-api" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>29</td><td><b>Aircall</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://developer.aircall.io/" target="_blank">docs ↗</a></td></tr><tr data-cat="Communications" data-verdict="ready">
+<td>30</td><td><b>Vonage</b><small>Communications</small></td>
+<td>Messaging, voice or collaboration platform with programmable communication surfaces.</td><td>OAuth2 + token/key</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Product-specific scopes, tokens and rate limits.</small></td>
+<td><a href="https://developer.vonage.com/en/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>31</td><td><b>Google Ads</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + developer token</td><td>self-serve account; developer-token review/approval</td>
+<td>REST + gRPC<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Developer token access level and account setup.</small></td>
+<td><a href="https://developers.google.com/google-ads/api/docs/start" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>32</td><td><b>Meta Ads</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + access tokens</td><td>self-serve developer; review for advanced/public use</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, permissions and business verification.</small></td>
+<td><a href="https://developers.facebook.com/docs/marketing-apis/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="gated">
+<td>33</td><td><b>LinkedIn Ads</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2</td><td>self-serve developer; product access/review</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Marketing permissions may require approval.</small></td>
+<td><a href="https://learn.microsoft.com/en-us/linkedin/marketing/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>34</td><td><b>GoHighLevel</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + token</td><td>self-serve / review dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes or developer access.</small></td>
+<td><a href="https://marketplace.gohighlevel.com/docs/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="ready">
+<td>35</td><td><b>Mailchimp</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + API key</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>OAuth app registration for public integrations.</small></td>
+<td><a href="https://mailchimp.com/developer/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="ready">
+<td>36</td><td><b>Klaviyo</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>API keys + OAuth2</td><td>self-serve developer access</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Private/public key model and scopes.</small></td>
+<td><a href="https://developers.klaviyo.com/en/docs/authenticate_" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>37</td><td><b>systeme.io</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + token</td><td>self-serve / review dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes or developer access.</small></td>
+<td><a href="https://systeme.io/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>38</td><td><b>Pinterest</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + token</td><td>self-serve / review dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes or developer access.</small></td>
+<td><a href="https://developers.pinterest.com/docs/getting-started/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>39</td><td><b>Threads</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + token</td><td>self-serve / review dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes or developer access.</small></td>
+<td><a href="https://developers.facebook.com/docs/threads/" target="_blank">docs ↗</a></td></tr><tr data-cat="Marketing &amp; Ads" data-verdict="constraint">
+<td>40</td><td><b>SendGrid</b><small>Marketing &amp; Ads</small></td>
+<td>Marketing, advertising, email or social platform with campaign/data APIs.</td><td>OAuth2 + token</td><td>self-serve / review dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes or developer access.</small></td>
+<td><a href="https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="ready">
+<td>41</td><td><b>Shopify</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + app credentials</td><td>self-serve partner/development store</td>
+<td>REST + GraphQL<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Public app review and shop scopes.</small></td>
+<td><a href="https://shopify.dev/docs/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="ready">
+<td>42</td><td><b>WooCommerce</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>API key pair</td><td>self-serve store admin</td>
+<td>REST<small>broad</small></td><td>community</td>
+<td><span class="pill ready">ready</span><small>Store owner must create API keys.</small></td>
+<td><a href="https://woocommerce.github.io/woocommerce-rest-api-docs/" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>43</td><td><b>BigCommerce</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://developer.bigcommerce.com/docs/start/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>44</td><td><b>Salesforce Commerce Cloud</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://developer.salesforce.com/docs/commerce" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>45</td><td><b>Magento / Adobe Commerce</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://developer.adobe.com/commerce/webapi/rest/" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>46</td><td><b>Squarespace</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://developers.squarespace.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>47</td><td><b>Ecwid</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://api-docs.ecwid.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>48</td><td><b>Gumroad</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://gumroad.com/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="gated">
+<td>49</td><td><b>Amazon Selling Partner</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2/LWA + AWS signing</td><td>developer registration; seller/vendor relationship</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Seller/vendor authorization and signing complexity.</small></td>
+<td><a href="https://developer-docs.amazon.com/sp-api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Ecommerce" data-verdict="constraint">
+<td>50</td><td><b>fanbasis</b><small>Ecommerce</small></td>
+<td>Commerce platform for products, orders, customers, stores or creator commerce.</td><td>OAuth2 + API credentials</td><td>self-serve / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Store/admin permissions or app review.</small></td>
+<td><a href="https://fanbasis.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>51</td><td><b>DataForSEO</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://docs.dataforseo.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>52</td><td><b>SE Ranking</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://seranking.com/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="gated">
+<td>53</td><td><b>Ahrefs</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key / subscription</td><td>paid / account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>API access is commercially gated.</small></td>
+<td><a href="https://ahrefs.com/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>54</td><td><b>MrScraper</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://docs.mrscraper.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="ready">
+<td>55</td><td><b>Apify</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API token</td><td>self-serve</td>
+<td>REST + webhooks<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Compute/storage and actor-specific schemas.</small></td>
+<td><a href="https://docs.apify.com/api/v2" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="ready">
+<td>56</td><td><b>Firecrawl</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key</td><td>self-serve trial</td>
+<td>REST<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Usage limits and paid scale.</small></td>
+<td><a href="https://docs.firecrawl.dev/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>57</td><td><b>Bright Data</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://docs.brightdata.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>58</td><td><b>Sherlock</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://github.com/sherlock-project/sherlock" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>59</td><td><b>Waterfall.io</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://waterfall.io/" target="_blank">docs ↗</a></td></tr><tr data-cat="Data &amp; SEO" data-verdict="constraint">
+<td>60</td><td><b>Clay</b><small>Data &amp; SEO</small></td>
+<td>Data, SEO, enrichment, crawling or scraping platform.</td><td>API key/token</td><td>self-serve trial / paid</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Usage-based pricing or plan/API access.</small></td>
+<td><a href="https://www.clay.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>61</td><td><b>GitHub</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>OAuth2 + PAT + GitHub Apps</td><td>self-serve</td>
+<td>REST + GraphQL<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Permissions and rate limits.</small></td>
+<td><a href="https://docs.github.com/en/rest" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>62</td><td><b>Vercel</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://vercel.com/docs/rest-api" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>63</td><td><b>Netlify</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://docs.netlify.com/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>64</td><td><b>Cloudflare</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Zone/account permissions and token scopes.</small></td>
+<td><a href="https://developers.cloudflare.com/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>65</td><td><b>Supabase</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://supabase.com/docs/guides/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>66</td><td><b>Neo4j</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://neo4j.com/docs/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="constraint">
+<td>67</td><td><b>Snowflake</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>OAuth2 + key-pair/basic</td><td>account dependent / trial</td>
+<td>REST + SQL APIs<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Account setup and database/warehouse permissions.</small></td>
+<td><a href="https://docs.snowflake.com/en/developer-guide/sql-api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>68</td><td><b>MongoDB Atlas</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://www.mongodb.com/docs/atlas/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>69</td><td><b>Datadog</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://docs.datadoghq.com/api/latest/" target="_blank">docs ↗</a></td></tr><tr data-cat="Developer &amp; Infra" data-verdict="ready">
+<td>70</td><td><b>Sentry</b><small>Developer &amp; Infra</small></td>
+<td>Developer, cloud, observability, database or infrastructure platform.</td><td>API token/key + OAuth2</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Project/org permissions and rate limits.</small></td>
+<td><a href="https://docs.sentry.io/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>71</td><td><b>Notion</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + integration token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Page/database access is explicitly granted.</small></td>
+<td><a href="https://developers.notion.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>72</td><td><b>Airtable</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://airtable.com/developers/web/api/introduction" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>73</td><td><b>Linear</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API key</td><td>self-serve</td>
+<td>GraphQL<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>GraphQL scopes and workspace permissions.</small></td>
+<td><a href="https://linear.app/developers/graphql" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>74</td><td><b>Jira</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve developer account</td>
+<td>REST + GraphQL/JQL<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Cloud/server differences and admin permissions.</small></td>
+<td><a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>75</td><td><b>Asana</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://developers.asana.com/docs/using-asana-connect" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>76</td><td><b>Monday.com</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://developer.monday.com/api-reference/docs/authentication" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>77</td><td><b>ClickUp</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://clickup.com/api/" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>78</td><td><b>Coda</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://coda.io/developers/apis/v1" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>79</td><td><b>Smartsheet</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://smartsheet.redoc.ly/" target="_blank">docs ↗</a></td></tr><tr data-cat="Productivity" data-verdict="ready">
+<td>80</td><td><b>Harvest</b><small>Productivity</small></td>
+<td>Workspace, docs, project, issue or work-management platform.</td><td>OAuth2 + API token</td><td>self-serve</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill ready">ready</span><small>Workspace permissions and scopes.</small></td>
+<td><a href="https://help.getharvest.com/api-v2/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="ready">
+<td>81</td><td><b>Stripe</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>API keys + OAuth2</td><td>self-serve test mode</td>
+<td>REST<small>broad</small></td><td>official/third-party ecosystem</td>
+<td><span class="pill ready">ready</span><small>Live-mode account controls and capabilities.</small></td>
+<td><a href="https://docs.stripe.com/api" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>82</td><td><b>Plaid</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>API keys + OAuth2</td><td>developer sandbox self-serve; production approval</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production access and products require review/approval.</small></td>
+<td><a href="https://plaid.com/docs/quickstart/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>83</td><td><b>Binance</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2 + API key/token</td><td>account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production approval, compliance or account onboarding.</small></td>
+<td><a href="https://developers.binance.com/docs/binance-spot-api-docs/rest-api" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>84</td><td><b>Paygent Connect</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2 + API key/token</td><td>account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production approval, compliance or account onboarding.</small></td>
+<td><a href="https://www.nmi.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>85</td><td><b>iPayX</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2 + API key/token</td><td>account dependent</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production approval, compliance or account onboarding.</small></td>
+<td><a href="https://ipayx.ai/docs" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>86</td><td><b>QuickBooks</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2</td><td>self-serve developer; production app review</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>Production app approval and account setup.</small></td>
+<td><a href="https://developer.intuit.com/app/developer/qbo/docs/get-started" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="constraint">
+<td>87</td><td><b>Xero</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2 + custom connections</td><td>self-serve developer; app review for some use</td>
+<td>REST<small>broad</small></td><td>unknown</td>
+<td><span class="pill constraint">ready with constraints</span><small>App review, scopes and connection model.</small></td>
+<td><a href="https://developer.xero.com/documentation/guides/oauth2/overview/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="gated">
+<td>88</td><td><b>Brex</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2 / API credentials</td><td>enterprise/account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access tied to customer account/approval.</small></td>
+<td><a href="https://developer.brex.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="gated">
+<td>89</td><td><b>Ramp</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>OAuth2/API token</td><td>enterprise/account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>API access is customer/partner controlled.</small></td>
+<td><a href="https://docs.ramp.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="Finance &amp; Fintech" data-verdict="gated">
+<td>90</td><td><b>PitchBook</b><small>Finance &amp; Fintech</small></td>
+<td>Payments, accounting, financial-data or spend-management platform.</td><td>API key/token</td><td>enterprise/contact sales</td>
+<td>REST/data feeds<small>broad</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Commercial licensing and enterprise access.</small></td>
+<td><a href="https://pitchbook.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="no">
+<td>91</td><td><b>NotebookLM</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>Google identity / enterprise API varies</td><td>enterprise/API availability varies</td>
+<td>limited/enterprise APIs<small>narrow</small></td><td>unknown</td>
+<td><span class="pill no">not viable</span><small>No broad general-purpose public NotebookLM API comparable to mature SaaS APIs.</small></td>
+<td><a href="https://cloud.google.com/gemini" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="constraint">
+<td>92</td><td><b>Otter AI</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>OAuth/API; MCP</td><td>account dependent</td>
+<td>REST + MCP<small>medium</small></td><td>MCP</td>
+<td><span class="pill constraint">ready with constraints</span><small>API/MCP access and account permissions need validation.</small></td>
+<td><a href="https://help.otter.ai/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>93</td><td><b>Fathom</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://fathom.video/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>94</td><td><b>Consensus</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://consensus.app/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>95</td><td><b>Reducto</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://reducto.ai/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="constraint">
+<td>96</td><td><b>Devin</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API/MCP</td><td>account dependent</td>
+<td>REST + MCP<small>medium</small></td><td>MCP</td>
+<td><span class="pill constraint">ready with constraints</span><small>API/MCP availability may depend on account/plan.</small></td>
+<td><a href="https://docs.devin.ai/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>97</td><td><b>higgsfield</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://higgsfield.ai/cli" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="constraint">
+<td>98</td><td><b>Mermaid CLI</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>CLI / local process</td><td>self-serve open source</td>
+<td>CLI<small>narrow</small></td><td>community</td>
+<td><span class="pill constraint">ready with constraints</span><small>Not a hosted API; toolkit needs sandbox/CLI execution.</small></td>
+<td><a href="https://github.com/mermaid-js/mermaid-cli" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>99</td><td><b>YouTube Transcript</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://transcriptapi.com/" target="_blank">docs ↗</a></td></tr><tr data-cat="AI &amp; Media" data-verdict="gated">
+<td>100</td><td><b>Grain</b><small>AI &amp; Media</small></td>
+<td>AI, research, meeting, content or media-native product.</td><td>API key/OAuth2</td><td>account dependent</td>
+<td>REST<small>medium</small></td><td>unknown</td>
+<td><span class="pill gated">possible but gated</span><small>Developer access and product availability vary.</small></td>
+<td><a href="https://grain.com/" target="_blank">docs ↗</a></td></tr></tbody></table></div></section>
+
+<section class="panel"><h2>Action for Composio</h2><div class="cols"><div><h3>Build queue</h3><p>Start with broad, self-serve products. Standardize OAuth/token patterns and automate evidence capture so new toolkits become repeatable rather than bespoke.</p></div>
+<div><h3>Outreach queue</h3><p>Prioritize enterprise/data/finance apps where the API is broad but production credentials, licensing or approval are gated.</p></div></div></section>
+
+<section class="panel"><h2>Reproduce</h2><p>Open <code>output/index.html</code>. Run <code>python agent/research_agent.py</code> and <code>python agent/verifier.py</code>. The README explains how to connect live browser/search tools and how to report the verification results.</p></section>
+<footer>Evidence links point to developer/product documentation supplied or discovered for this research snapshot. API access, pricing and MCP availability can change; recheck evolving entries immediately before submission.</footer>
+</div><script>
+const rows=[...document.querySelectorAll('#rows tr')],cat=document.querySelector('#cat'),ver=document.querySelector('#verdict'),q=document.querySelector('#q');
+function f(){let c=cat.value,v=ver.value,s=q.value.toLowerCase();rows.forEach(r=>r.style.display=(!c||r.dataset.cat===c)&&(!v||r.dataset.verdict===v)&&(!s||r.innerText.toLowerCase().includes(s))?'':'none')}cat.onchange=f;ver.onchange=f;q.oninput=f;
+</script></body></html>
