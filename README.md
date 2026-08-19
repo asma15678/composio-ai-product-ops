@@ -1,4 +1,4 @@
-# Composio AI Product Ops Intern — Take-Home
+#  AI Product Ops 
 
 ## Deliverables
 - `output/index.html` — self-explanatory case study
